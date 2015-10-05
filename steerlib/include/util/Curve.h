@@ -35,6 +35,12 @@ namespace Util {
 	class UTIL_API CurvePoint
 	{
 	public:
+		
+		bool operator<(const CurvePoint a)
+		{
+			return time < a.time;
+		}
+
 		CurvePoint(Point inputPosition, Vector& inputTangent, float inputTime) : position(inputPosition),
 																tangent(inputTangent), time(inputTime) {}
 		Point position;

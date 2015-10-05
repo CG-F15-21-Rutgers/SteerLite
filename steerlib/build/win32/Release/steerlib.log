@@ -1,5 +1,161 @@
-﻿Build started 9/22/2015 12:41:55 AM.
+﻿Build started 10/4/2015 7:35:12 PM.
+     1>Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerlib\build\win32\steerlib.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\util\include /I..\..\include /I..\..\..\external /Zi /nologo /W3 /WX- /MP /O2 /Oi /Ot /GL /D _COMPILING_WIN32_STEERLIB /D ENABLE_GUI /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\src\AgentMetricsCollector.cpp ..\..\src\BehaviorParameter.cpp ..\..\src\Behaviour.cpp ..\..\src\BenchmarkEngine.cpp ..\..\src\CompositeTechnique01.cpp ..\..\src\CompositeTechnique02.cpp ..\..\src\CompositeTechniquePLE.cpp ..\..\src\Curve.cpp ..\..\src\FrameSaver.cpp ..\..\src\OrientedWallObstacle.cpp ..\..\src\SimulationMetricsCollector.cpp ..\..\src\GridDatabase2D.cpp ..\..\src\CommandLineParser.cpp ..\..\src\DrawLib.cpp ..\..\src\DynamicLibrary.cpp ..\..\src\HighResCounter.cpp ..\..\src\MemoryMapper.cpp ..\..\src\Misc.cpp ..\..\src\PerformanceProfiler.cpp ..\..\src\StateMachine.cpp ..\..\src\ThreadedTaskManager.cpp ..\..\src\XMLParser.cpp ..\..\src\RecFileReader.cpp ..\..\src\RecFileWriter.cpp ..\..\src\TestCaseReader.cpp ..\..\src\TestCaseReaderPrivate.cpp ..\..\src\TestCaseWriter.cpp ..\..\src\Camera.cpp ..\..\src\Clock.cpp ..\..\src\SimulationEngine.cpp ..\..\src\SimulationOptions.cpp ..\..\src\SteeringCommand.cpp ..\..\src\BoxObstacle.cpp ..\..\src\CircleObstacle.cpp ..\..\src\OrientedBoxObstacle.cpp ..\..\src\RecFilePlayerModule.cpp ..\..\src\SimulationRecorderModule.cpp ..\..\src\TestCasePlayerModule.cpp ..\..\..\external\tinyxml\ticpp.cpp ..\..\..\external\tinyxml\tinystr.cpp ..\..\..\external\tinyxml\tinyxml.cpp ..\..\..\external\tinyxml\tinyxmlerror.cpp ..\..\..\external\tinyxml\tinyxmlparser.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         AgentMetricsCollector.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         BehaviorParameter.cpp
+         Behaviour.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+         BenchmarkEngine.cpp
+         CompositeTechnique01.cpp
+         CompositeTechnique02.cpp
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\BenchmarkEngine.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\CompositeTechnique02.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\CompositeTechnique01.cpp)
+         CompositeTechniquePLE.cpp
+         Curve.cpp
+         FrameSaver.cpp
+         OrientedWallObstacle.cpp
+     1>..\..\src\Curve.cpp(116): warning C4101: 'normalTime' : unreferenced local variable
+     1>..\..\src\Curve.cpp(116): warning C4101: 'intervalTime' : unreferenced local variable
+     1>..\..\src\Curve.cpp(187): warning C4018: '<' : signed/unsigned mismatch
+     1>..\..\src\Curve.cpp(189): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\CompositeTechniquePLE.cpp)
+         SimulationMetricsCollector.cpp
+     1>..\..\src\FrameSaver.cpp(47): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>..\..\src\FrameSaver.cpp(50): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>..\..\src\FrameSaver.cpp(53): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerlib\include\obstacles/OrientedWallObstacle.h(39): warning C4251: 'SteerLib::OrientedWallObstacle::_wallSections' : class 'std::vector<SteerLib::OrientedBoxObstacle *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'SteerLib::OrientedWallObstacle'
+                 with
+                 [
+                     _Ty=SteerLib::OrientedBoxObstacle *
+                 ] (..\..\src\OrientedWallObstacle.cpp)
+     1>..\..\src\OrientedWallObstacle.cpp(40): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>..\..\src\OrientedWallObstacle.cpp(42): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>..\..\src\OrientedWallObstacle.cpp(60): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>..\..\src\OrientedWallObstacle.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         GridDatabase2D.cpp
+         CommandLineParser.cpp
+         DrawLib.cpp
+     1>..\..\src\DrawLib.cpp(242): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>..\..\src\DrawLib.cpp(258): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>..\..\src\GridDatabase2D.cpp(245): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>..\..\src\GridDatabase2D.cpp(443): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         DynamicLibrary.cpp
+         HighResCounter.cpp
+         MemoryMapper.cpp
+         Misc.cpp
+         PerformanceProfiler.cpp
+         StateMachine.cpp
+         ThreadedTaskManager.cpp
+         XMLParser.cpp
+     1>..\..\src\ThreadedTaskManager.cpp(286): warning C4996: 'GetVersionExA': was declared deprecated
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433) : see declaration of 'GetVersionExA'
+         RecFileReader.cpp
+         RecFileWriter.cpp
+         TestCaseReader.cpp
+         TestCaseReaderPrivate.cpp
+     1>..\..\src\RecFileWriter.cpp(104): warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(105): warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(119): warning C4244: '=' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(167): warning C4244: '=' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(170): warning C4244: '=' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(173): warning C4244: '=' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+     1>..\..\src\RecFileWriter.cpp(237): warning C4244: '=' : conversion from 'std::streamoff' to 'unsigned int', possible loss of data
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\TestCaseReader.cpp)
+         TestCaseWriter.cpp
+         Camera.cpp
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\TestCaseReaderPrivate.cpp)
+         Clock.cpp
+     1>..\..\src\Camera.cpp(171): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>..\..\src\Camera.cpp(172): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SimulationEngine.cpp
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\TestCaseWriter.cpp)
+         SimulationOptions.cpp
+     1>..\..\src\TestCaseWriter.cpp(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>..\..\src\TestCaseWriter.cpp(54): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+         SteeringCommand.cpp
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimulationEngine.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimulationOptions.cpp)
+         BoxObstacle.cpp
+     1>..\..\src\SimulationEngine.cpp(162): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>..\..\src\SimulationEngine.cpp(1005): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+         CircleObstacle.cpp
+         OrientedBoxObstacle.cpp
+         RecFilePlayerModule.cpp
+         SimulationRecorderModule.cpp
+         TestCasePlayerModule.cpp
+         ticpp.cpp
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\RecFilePlayerModule.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimulationRecorderModule.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\TestCasePlayerModule.cpp)
+         tinystr.cpp
+         tinyxml.cpp
+         tinyxmlerror.cpp
+         tinyxmlparser.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\\" util.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.pdb" /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.lib" /MACHINE:X64 /DLL Release\AgentMetricsCollector.obj
+         Release\BehaviorParameter.obj
+         Release\Behaviour.obj
+         Release\BenchmarkEngine.obj
+         Release\CompositeTechnique01.obj
+         Release\CompositeTechnique02.obj
+         Release\CompositeTechniquePLE.obj
+         Release\Curve.obj
+         Release\FrameSaver.obj
+         Release\OrientedWallObstacle.obj
+         Release\SimulationMetricsCollector.obj
+         Release\GridDatabase2D.obj
+         Release\CommandLineParser.obj
+         Release\DrawLib.obj
+         Release\DynamicLibrary.obj
+         Release\HighResCounter.obj
+         Release\MemoryMapper.obj
+         Release\Misc.obj
+         Release\PerformanceProfiler.obj
+         Release\StateMachine.obj
+         Release\ThreadedTaskManager.obj
+         Release\XMLParser.obj
+         Release\RecFileReader.obj
+         Release\RecFileWriter.obj
+         Release\TestCaseReader.obj
+         Release\TestCaseReaderPrivate.obj
+         Release\TestCaseWriter.obj
+         Release\Camera.obj
+         Release\Clock.obj
+         Release\SimulationEngine.obj
+         Release\SimulationOptions.obj
+         Release\SteeringCommand.obj
+         Release\BoxObstacle.obj
+         Release\CircleObstacle.obj
+         Release\OrientedBoxObstacle.obj
+         Release\RecFilePlayerModule.obj
+         Release\SimulationRecorderModule.obj
+         Release\TestCasePlayerModule.obj
+         Release\ticpp.obj
+         Release\tinystr.obj
+         Release\tinyxml.obj
+         Release\tinyxmlerror.obj
+         Release\tinyxmlparser.obj
+            Creating library C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.lib and object C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.exp
+         Generating code
+     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(75): warning C4756: overflow in constant arithmetic
+     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(83): warning C4756: overflow in constant arithmetic
+     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(91): warning C4756: overflow in constant arithmetic
+     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(100): warning C4756: overflow in constant arithmetic
+         Finished generating code
+         steerlib.vcxproj -> C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.dll
+     1>Done Building Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerlib\build\win32\steerlib.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:41.59
