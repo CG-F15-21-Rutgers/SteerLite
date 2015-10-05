@@ -37,6 +37,12 @@ namespace Util {
 	public:
 		CurvePoint(Point inputPosition, Vector& inputTangent, float inputTime) : position(inputPosition),
 																tangent(inputTangent), time(inputTime) {}
+		bool operator<(const CurvePoint a)
+		{
+			
+			return time < a.time;
+		}
+		
 		Point position;
 		Vector tangent;
 		float time;
@@ -79,7 +85,7 @@ namespace Util {
 
 		// Sort controlPoints vector in ascending order: min-first
 		void sortControlPoints();
-
+		
 	private:
 		// Contains the controlPoints that are used to create the curve
 		std::vector<CurvePoint> controlPoints;
@@ -99,6 +105,7 @@ namespace Util {
 		// Implement Catmull-Rom curve
 		Point useCatmullCurve(const unsigned int nextPoint, const float time);
 	};
+	
 }
 
 #ifdef _WIN32
