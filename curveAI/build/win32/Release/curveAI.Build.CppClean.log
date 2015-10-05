@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\users\ne0\desktop\gihub\steerlite\curveai\build\win32\release\vc120.pdb
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\curveai.lib
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\curveai.exp
@@ -11,3 +12,18 @@ c:\users\ne0\desktop\gihub\steerlite\curveai\build\win32\release\curveai.tlog\cu
 c:\users\ne0\desktop\gihub\steerlite\curveai\build\win32\release\curveai.tlog\link.command.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\curveai\build\win32\release\curveai.tlog\link.read.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\curveai\build\win32\release\curveai.tlog\link.write.1.tlog
+=======
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\vc120.pdb
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\curveai.lib
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\curveai.exp
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\curveai.dll
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveagent.obj
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveaimodule.obj
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\cl.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\cl.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\cl.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\curveai.write.1u.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\link.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\link.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\curveai\build\win32\release\curveai.tlog\link.write.1.tlog
+>>>>>>> origin/master

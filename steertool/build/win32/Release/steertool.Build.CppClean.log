@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\users\ne0\desktop\gihub\steerlite\steertool\build\win32\release\vc120.pdb
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\steertool.exe
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\steertool.lib
@@ -11,3 +12,18 @@ c:\users\ne0\desktop\gihub\steerlite\steertool\build\win32\release\steertool.tlo
 c:\users\ne0\desktop\gihub\steerlite\steertool\build\win32\release\steertool.tlog\link.read.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\steertool\build\win32\release\steertool.tlog\link.write.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\steertool\build\win32\release\steertool.tlog\steertool.write.1u.tlog
+=======
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\vc120.pdb
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steertool.exe
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steertool.lib
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steertool.exp
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\main.obj
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\unittest.obj
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\cl.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\cl.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\cl.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\link.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\link.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\link.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steertool\build\win32\release\steertool.tlog\steertool.write.1u.tlog
+>>>>>>> origin/master

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\users\ne0\desktop\gihub\steerlite\external\glfw\win32\release\vc120.pdb
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\glfw.lib
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\glfw.exp
@@ -30,3 +31,37 @@ c:\users\ne0\desktop\gihub\steerlite\external\glfw\win32\release\glfw.tlog\glfw.
 c:\users\ne0\desktop\gihub\steerlite\external\glfw\win32\release\glfw.tlog\link.command.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\external\glfw\win32\release\glfw.tlog\link.read.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\external\glfw\win32\release\glfw.tlog\link.write.1.tlog
+=======
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\vc120.pdb
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\glfw.lib
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\glfw.exp
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\glfw.dll
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\enable.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\fullscreen.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glext.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\image.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\init.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\input.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\joystick.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\stream.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\tga.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\thread.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\time.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_dllmain.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_enable.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_fullscreen.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_glext.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_init.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_joystick.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_thread.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_time.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\win32_window.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\window.obj
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\cl.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\cl.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\cl.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\glfw.write.1u.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\link.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\link.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\external\glfw\win32\release\glfw.tlog\link.write.1.tlog
+>>>>>>> origin/master

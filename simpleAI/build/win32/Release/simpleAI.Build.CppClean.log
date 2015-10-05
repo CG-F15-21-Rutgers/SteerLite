@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\users\ne0\desktop\gihub\steerlite\simpleai\build\win32\release\vc120.pdb
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\simpleai.dll
 c:\users\ne0\desktop\gihub\steerlite\build\win32\release\simpleai.lib
@@ -11,3 +12,18 @@ c:\users\ne0\desktop\gihub\steerlite\simpleai\build\win32\release\simpleai.tlog\
 c:\users\ne0\desktop\gihub\steerlite\simpleai\build\win32\release\simpleai.tlog\link.read.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\simpleai\build\win32\release\simpleai.tlog\link.write.1.tlog
 c:\users\ne0\desktop\gihub\steerlite\simpleai\build\win32\release\simpleai.tlog\simpleai.write.1u.tlog
+=======
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\vc120.pdb
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\simpleai.dll
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\simpleai.lib
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\simpleai.exp
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleagent.obj
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleaimodule.obj
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\cl.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\cl.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\cl.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\link.command.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\link.read.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\link.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\simpleai\build\win32\release\simpleai.tlog\simpleai.write.1u.tlog
+>>>>>>> origin/master

@@ -13,7 +13,11 @@
 #include "Globals.h"
 
 using namespace Util;
+<<<<<<< HEAD
 int a; Point newPosition,oldPosition,temp;
+=======
+int a; Point newPosition, oldPosition, temp;
+>>>>>>> origin/master
 float t;
 Curve::Curve(const CurvePoint& startPoint, int curveType) : type(curveType)
 {
@@ -24,7 +28,11 @@ Curve::Curve(const std::vector<CurvePoint>& inputPoints, int curveType) : type(c
 {
 	controlPoints = inputPoints;
 	sortControlPoints();
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/master
 }
 
 // Add one control point to the vector controlPoints
@@ -63,15 +71,23 @@ void Curve::drawCurve(Color curveColor, float curveThickness, int window)
 		//std::cout << "\tWork2";
 		//std::cout << "\nj :" << j << "  l:" << l;
 
+<<<<<<< HEAD
 		for (; j < l; j = j + window)  
 		{
 			Util::DrawLib::drawLine(c, useHermiteCurve(k, j));
 			c = useHermiteCurve(k, j);
+=======
+		for (; j < l; j = j + window)
+		{
+			Util::DrawLib::drawLine(c, useHermiteCurve(k, j));
+			c = useCatmullCurve(k, j);
+>>>>>>> origin/master
 
 			//std::cout << "\tWork3";
 
 			//std::cout << "j :"<<j<<"  l:"<<l;
 		}
+<<<<<<< HEAD
 	it2++;
 	it++;
 	j = (*it).time;
@@ -84,12 +100,27 @@ void Curve::drawCurve(Color curveColor, float curveThickness, int window)
 	//if ( (int)t % window==0)
 	//Util::DrawLib::drawLine(a, newPosition);
 	
+=======
+		it2++;
+		it++;
+		j = (*it).time;
+		l = (*it2).time;
+	}
+
+
+	//std::cout << "\n O: " << oldPosition << "\tN: " << newPosition;
+
+	//if ( (int)t % window==0)
+	//Util::DrawLib::drawLine(a, newPosition);
+
+
+>>>>>>> origin/master
 
 	
 	// Robustness: make sure there is at least two control point: start and end points
 
 	// Move on the curve from t=0 to t=finalPoint, using window as step size, and linearly interpolate the curve points
-	
+
 	return;
 #endif
 }
@@ -97,11 +128,19 @@ void Curve::drawCurve(Color curveColor, float curveThickness, int window)
 void Curve::sortControlPoints()
 {
 	std::sort(controlPoints.begin(), controlPoints.end());
+<<<<<<< HEAD
 	
 	//testing sort function
 	//std::cout << "Sorted List:";
 	//for (std::vector<CurvePoint>::iterator it = controlPoints.begin(); it != controlPoints.end();it++)
 		//std::cout << "x: "<<(*it).position.x<<"\n";
+=======
+
+	//testing sort function
+	//std::cout << "Sorted List:";
+	//for (std::vector<CurvePoint>::iterator it = controlPoints.begin(); it != controlPoints.end();it++)
+	//std::cout << "x: "<<(*it).position.x<<"\n";
+>>>>>>> origin/master
 	return;
 }
 
@@ -135,12 +174,18 @@ bool Curve::calculatePoint(Point& outputPoint, float time)
 
 // Check Roboustness
 bool Curve::checkRobust()
+<<<<<<< HEAD
 {   
 	int p=0;
+=======
+{
+	int p = 0;
+>>>>>>> origin/master
 	sortControlPoints();
 	//int p = (*controlPoints.end()).time;
 	for (std::vector<CurvePoint>::iterator it = controlPoints.begin(); it != controlPoints.end(); it++)
 		p++;
+<<<<<<< HEAD
 	if (p < 2 )
 	{
 		return false;
@@ -148,6 +193,15 @@ bool Curve::checkRobust()
 	
 	
 		return true;
+=======
+	if (p < 2)
+	{
+		return false;
+	}
+
+
+	return true;
+>>>>>>> origin/master
 }
 
 // Find the current time interval (i.e. index of the next control point to follow according to current time)
@@ -157,7 +211,11 @@ bool Curve::findTimeInterval(unsigned int& nextPoint, float time)
 	a = 0;
 	for (std::vector<CurvePoint>::iterator it = controlPoints.begin();; it++)
 	{
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> origin/master
 		if ((*it).time > time)
 			break;
 		a++;
@@ -169,17 +227,30 @@ bool Curve::findTimeInterval(unsigned int& nextPoint, float time)
 	}
 	nextPoint = a;
 
+<<<<<<< HEAD
 	std::cout << "\nCurrent time:"<<time<<" Next Point:" << a;
+=======
+	std::cout << "\nCurrent time:" << time << " Next Point:" << a;
+>>>>>>> origin/master
 	return true;
 }
 
 // Implement Hermite curve
 Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
+<<<<<<< HEAD
 {   
 	oldPosition = newPosition;
 
 	float normalTime, intervalTime,u;
 	//Hermite Curve Implementation
+=======
+{
+	oldPosition = newPosition;
+
+	float normalTime, intervalTime, u;
+	//Hermite Curve Implementation
+
+>>>>>>> origin/master
 	std::vector<CurvePoint>::iterator it2 = controlPoints.begin();
 	std::vector<CurvePoint>::iterator it = controlPoints.begin();
 	int z = 1;
@@ -189,7 +260,10 @@ Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
 			it++;
 		it2++;
 	}
+<<<<<<< HEAD
 	//std::cout << "\nTime :" << time;
+=======
+>>>>>>> origin/master
 	normalTime = float((*it2).time - (*it).time);
 	intervalTime = time - (*it).time;
 	u = intervalTime / normalTime;
@@ -207,11 +281,19 @@ Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
 	bx = (3 * ((*it2).position.x - (*it).position.x) / pow(((*it2).time - (*it).time), 2)) - ((2 * sx + sx2) / pow(((*it2).time - (*it).time), 1));
 	cx = sx;
 	dx = (*it).position.x;
+<<<<<<< HEAD
     ay = (-1 * 2 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 3)) + ((sy + sy2) / pow(((*it2).time - (*it).time), 2));
 	by = (3 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 2)) - ((2 * sy + sy2) / pow(((*it2).time - (*it).time), 1));
 	cy = sy;
 	dy = (*it).position.y;
     az = (-1 * 2 * ((*it2).position.z - (*it).position.z) / pow(((*it2).time - (*it).time), 3)) + ((sz + sz2) / pow(((*it2).time - (*it).time), 2));
+=======
+	ay = (-1 * 2 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 3)) + ((sy + sy2) / pow(((*it2).time - (*it).time), 2));
+	by = (3 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 2)) - ((2 * sy + sy2) / pow(((*it2).time - (*it).time), 1));
+	cy = sy;
+	dy = (*it).position.y;
+	az = (-1 * 2 * ((*it2).position.z - (*it).position.z) / pow(((*it2).time - (*it).time), 3)) + ((sz + sz2) / pow(((*it2).time - (*it).time), 2));
+>>>>>>> origin/master
 	bz = (3 * ((*it2).position.z - (*it).position.z) / pow(((*it2).time - (*it).time), 2)) - ((2 * sz + sz2) / pow(((*it2).time - (*it).time), 1));
 	cz = sz;
 	dz = (*it).position.z;
@@ -219,6 +301,7 @@ Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
 	newPosition.x = ax*pow((time - (*it).time), 3) + bx*pow((time - (*it).time), 2) + cx*(time - (*it).time) + dx;
 	newPosition.y = ay*pow((time - (*it).time), 3) + by*pow((time - (*it).time), 2) + cy*(time - (*it).time) + dy;
 	newPosition.z = az*pow((time - (*it).time), 3) + bz*pow((time - (*it).time), 2) + cz*(time - (*it).time) + dz;
+<<<<<<< HEAD
 
 	
 //	if (newPosition.x == (*controlPoints.end()).position.x && newPosition.y == (*controlPoints.end()).position.y && newPosition.z == (*controlPoints.end()).position.z)
@@ -227,12 +310,23 @@ Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
 	if (a == controlPoints.size())
 		return (*controlPoints.begin()).position;
 	
+=======
+
+
+	//	if (newPosition.x == (*controlPoints.end()).position.x && newPosition.y == (*controlPoints.end()).position.y && newPosition.z == (*controlPoints.end()).position.z)
+	//	std::cout << "Hello";
+
+	if (a == controlPoints.size())
+		return temp;
+
+>>>>>>> origin/master
 	return newPosition;
 }
 
 // Implement Catmull-Rom curve
 Point Curve::useCatmullCurve(const unsigned int nextPoint, const float time)
 {
+<<<<<<< HEAD
 	Point newPosition;
 	std::vector<CurvePoint>::iterator it0 = controlPoints.begin();
 	std::vector<CurvePoint>::iterator it = controlPoints.begin();
@@ -290,5 +384,78 @@ Point Curve::useCatmullCurve(const unsigned int nextPoint, const float time)
 	newPosition.y = ((*it0).position.y * h1) + ((*it).position.y * h2) + ((*it2).position.y * h3) + ((*it3).position.y * h4);
 	newPosition.z = ((*it0).position.z * h1) + ((*it).position.z * h2) + ((*it2).position.z * h3) + ((*it3).position.z * h4);
 
+=======
+/*	Point newPosition;
+	oldPosition = newPosition;
+
+	float normalTime, intervalTime, u;
+	//Hermite Curve Implementation
+
+	std::vector<CurvePoint>::iterator it2 = controlPoints.begin();
+	std::vector<CurvePoint>::iterator it = controlPoints.begin();
+	std::vector<CurvePoint>::iterator it0 = controlPoints.begin();
+	std::vector<CurvePoint>::iterator it3 = controlPoints.begin();
+	int z = 1;
+	for (; z < nextPoint || z == nextPoint; z++)
+	{
+		if (z < nextPoint)
+			it0++;
+		it++;
+		it2++;
+		it3++;
+	}
+	it2++;
+	it3++; it3++;
+
+	std::cout << "\ny-1 time:" << (*it0).time << "\ty time:" << (*it).time << "\ty+1 time:" << (*it2).time << "\ty+2 time:" << (*it3).time;
+
+	if (controlPoints.begin() != it && controlPoints.end() != it)
+	{
+		(*it).tangent.x = ((((*it).time - (*it0).time) / ((*it2).time - (*it0).time)) * (((*it2).position.x - ((*it).position.x)) / (((*it2).time) - (*it).time)) + ((((*it2).time - (*it).time) / ((*it2).time - (*it0).time)) * ((*it).position.x - ((*it0).position.x)) / (((*it).time) - (*it0).time)));
+		(*it).tangent.y = ((((*it).time - (*it0).time) / ((*it2).time - (*it0).time)) * (((*it2).position.y - ((*it).position.y)) / (((*it2).time) - (*it).time)) + ((((*it2).time - (*it).time) / ((*it2).time - (*it0).time)) * ((*it).position.y - ((*it0).position.y)) / (((*it).time) - (*it0).time)));
+		(*it).tangent.z = ((((*it).time - (*it0).time) / ((*it2).time - (*it0).time)) * (((*it2).position.z - ((*it).position.z)) / (((*it2).time) - (*it).time)) + ((((*it2).time - (*it).time) / ((*it2).time - (*it0).time)) * ((*it).position.z - ((*it0).position.z)) / (((*it).time) - (*it0).time)));
+
+		(*it2).tangent.x = ((((*it2).time - (*it).time) / ((*it3).time - (*it).time)) * (((*it3).position.x - ((*it2).position.x)) / (((*it3).time) - (*it2).time)) + ((((*it3).time - (*it2).time) / ((*it3).time - (*it).time)) * ((*it2).position.x - ((*it).position.x)) / (((*it2).time) - (*it).time)));
+		(*it2).tangent.y = ((((*it2).time - (*it).time) / ((*it3).time - (*it).time)) * (((*it3).position.y - ((*it2).position.y)) / (((*it3).time) - (*it2).time)) + ((((*it3).time - (*it2).time) / ((*it3).time - (*it).time)) * ((*it2).position.y - ((*it).position.y)) / (((*it2).time) - (*it).time)));
+		(*it2).tangent.z = ((((*it2).time - (*it).time) / ((*it3).time - (*it).time)) * (((*it3).position.z - ((*it2).position.z)) / (((*it3).time) - (*it2).time)) + ((((*it3).time - (*it2).time) / ((*it3).time - (*it).time)) * ((*it2).position.z - ((*it).position.z)) / (((*it2).time) - (*it).time)));
+	}
+
+	else if (controlPoints.begin() == it0)
+	{
+
+		(*it0).tangent.x = (((((*it2).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it).position.x - ((*it0).position.x)) / (((*it).time) - (*it0).time)) - ((((*it).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it2).position.x - ((*it0).position.x)) / (((*it2).time) - (*it0).time)));
+		(*it0).tangent.y = (((((*it2).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it).position.y - ((*it0).position.y)) / (((*it).time) - (*it0).time)) - ((((*it).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it2).position.y - ((*it0).position.y)) / (((*it2).time) - (*it0).time)));
+		(*it0).tangent.z = (((((*it2).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it).position.z - ((*it0).position.z)) / (((*it).time) - (*it0).time)) - ((((*it).time - (*it0).time) / ((*it2).time - (*it).time)) * ((*it2).position.z - ((*it0).position.z)) / (((*it2).time) - (*it0).time)));
+
+		(*it).tangent.x = (((((*it3).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it2).position.x - ((*it).position.x)) / (((*it2).time) - (*it).time)) - ((((*it2).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it3).position.x - ((*it).position.x)) / (((*it3).time) - (*it).time)));
+		(*it).tangent.y = (((((*it3).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it2).position.y - ((*it).position.y)) / (((*it2).time) - (*it).time)) - ((((*it2).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it3).position.y - ((*it).position.y)) / (((*it3).time) - (*it).time)));
+		(*it).tangent.z = (((((*it3).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it2).position.z - ((*it).position.z)) / (((*it2).time) - (*it).time)) - ((((*it2).time - (*it).time) / ((*it3).time - (*it2).time)) * ((*it3).position.z - ((*it).position.z)) / (((*it3).time) - (*it).time)));
+
+
+	}
+
+	else if (controlPoints.end() == it)
+	{
+		//(*it).tangent.x = ((((*eit2).time - (*eit).time) / ((*eit2).time - (*eit1).time)) * ((*eit1).position.x - ((*eit).position.x)) / (((*eit1).time) - (*eit).time)) - ((((*eit1).time - (*eit).time) / ((*eit2).time - (*eit).time)) * ((*eit2).position.x - ((*eit).position.x)) / (((*eit2).time) - (*eit).time));
+		//(*it).tangent.y = ((((*eit2).time - (*eit).time) / ((*eit2).time - (*eit1).time)) * ((*eit1).position.y - ((*eit).position.y)) / (((*eit1).time) - (*eit).time)) - ((((*eit1).time - (*eit).time) / ((*eit2).time - (*eit).time)) * ((*eit2).position.y - ((*eit).position.y)) / (((*eit2).time) - (*eit).time));
+		//(*it).tangent.z = ((((*eit2).time - (*eit).time) / ((*eit2).time - (*eit1).time)) * ((*eit1).position.z - ((*eit).position.z)) / (((*eit1).time) - (*eit).time)) - ((((*eit1).time - (*eit).time) / ((*eit2).time - (*eit).time)) * ((*eit2).position.z - ((*eit).position.z)) / (((*eit2).time) - (*eit).time));
+
+	}
+
+
+	normalTime = float((*it2).time - (*it).time);
+	intervalTime = time - (*it).time;
+	u = intervalTime / normalTime;
+
+	newPosition.x = ((*it).position.x * (2 * u*u*u - 3 * u*u + 1)) + ((*it2).position.x * (-2 * u*u*u + 3 * u*u)) +
+		((*it).tangent.x * (u*u*u - 2 * u*u + u)) + ((*it2).tangent.x * (u*u*u - u*u));
+	newPosition.y = ((*it).position.y * (2 * u*u*u - 3 * u*u + 1)) + ((*it2).position.y * (-2 * u*u*u + 3 * u*u)) +
+		((*it).tangent.y * (u*u*u - 2 * u*u + u)) + ((*it2).tangent.y * (u*u*u - u*u));
+	newPosition.z = ((*it).position.z * (2 * u*u*u - 3 * u*u + 1)) + ((*it2).position.z * (-2 * u*u*u + 3 * u*u)) +
+		((*it).tangent.z * (u*u*u - 2 * u*u + u)) + ((*it2).tangent.z * (u*u*u - u*u));
+
+		
+	*/
+>>>>>>> origin/master
 	return newPosition;
 }
