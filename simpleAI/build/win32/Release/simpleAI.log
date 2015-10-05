@@ -1,4 +1,4 @@
-﻿Build started 10/4/2015 7:35:54 PM.
+﻿Build started 10/4/2015 10:41:25 PM.
      1>Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\simpleAI\build\win32\simpleAI.vcxproj" on node 4 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\util\include /I..\..\include /I..\..\..\steerlib\include /I..\..\..\external /Zi /nologo /W3 /WX- /MP /O2 /Oi /Ot /GL /D ENABLE_GUI /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\src\SimpleAgent.cpp ..\..\src\SimpleAIModule.cpp
@@ -11,8 +11,8 @@
                  c:\users\krishna ananth\documents\github\steerlite\steerlib\include\Globals.h(22) : see previous definition of 'UTIL_API'
      1>c:\users\krishna ananth\documents\github\steerlite\util\include\UtilGlobals.h(17): warning C4005: 'UTIL_API' : macro redefinition (..\..\src\SimpleAgent.cpp)
                  c:\users\krishna ananth\documents\github\steerlite\steerlib\include\Globals.h(22) : see previous definition of 'UTIL_API'
-     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimpleAgent.cpp)
      1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimpleAIModule.cpp)
+     1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data (..\..\src\SimpleAgent.cpp)
      1>c:\users\krishna ananth\documents\github\steerlite\util\include\LogObject.h(43): warning C4244: '=' : conversion from '__int64' to 'int', possible loss of data (..\..\src\SimpleAIModule.cpp)
                  ..\..\src\SimpleAIModule.cpp(154) : see reference to function template instantiation 'void LogObject::addLogData<__int64>(T)' being compiled
                  with
@@ -40,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:17.31
+Time Elapsed 00:00:22.32

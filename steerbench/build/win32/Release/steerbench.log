@@ -1,4 +1,4 @@
-﻿Build started 10/4/2015 7:35:54 PM.
+﻿Build started 10/4/2015 10:41:22 PM.
      1>Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerbench\build\win32\steerbench.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\util\include /I..\..\include /I..\..\..\steerlib\include /I..\..\..\external\ /Zi /nologo /W3 /WX- /MP /O2 /Oi /Ot /GL /D ENABLE_GUI /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\src\Main.cpp
@@ -17,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.04
+Time Elapsed 00:00:06.53

@@ -1,4 +1,7 @@
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\vc120.pdb
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steerlib.dll
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steerlib.lib
+c:\users\krishna ananth\documents\github\steerlite\build\win32\release\steerlib.exp
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\agentmetricscollector.obj
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\behaviorparameter.obj
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\behaviour.obj
@@ -47,5 +50,5 @@ c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\cl.write.1.tlog
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\link.command.1.tlog
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\link.read.1.tlog
-c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\link.read.5.tlog
 c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\link.write.1.tlog
+c:\users\krishna ananth\documents\github\steerlite\steerlib\build\win32\release\steerlib.tlog\steerlib.write.1u.tlog
