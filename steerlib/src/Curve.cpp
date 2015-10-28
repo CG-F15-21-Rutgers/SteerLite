@@ -13,8 +13,7 @@
 #include "Globals.h"
 
 using namespace Util;
-int a; Point newPosition, oldPosition, temp;
-float t;
+
 Curve::Curve(const CurvePoint& startPoint, int curveType) : type(curveType)
 {
 	controlPoints.push_back(startPoint);
@@ -24,7 +23,6 @@ Curve::Curve(const std::vector<CurvePoint>& inputPoints, int curveType) : type(c
 {
 	controlPoints = inputPoints;
 	sortControlPoints();
-
 }
 
 // Add one control point to the vector controlPoints
@@ -45,46 +43,24 @@ void Curve::addControlPoints(const std::vector<CurvePoint>& inputPoints)
 // Draw the curve shape on screen, usign window as step size (bigger window: less accurate shape)
 void Curve::drawCurve(Color curveColor, float curveThickness, int window)
 {
+	Point  a = controlPoints.front().position;
+	Point  b = a;
 #ifdef ENABLE_GUI
-	Point c, b;
-	window = 1;
-	//std::cout << "\tWork";
-	Util::DrawLib::glColor(curveColor);
-	sortControlPoints();
-	c = (*controlPoints.begin()).position;
-	std::vector<CurvePoint>::iterator it = controlPoints.begin();
-	std::vector<CurvePoint>::iterator it2 = controlPoints.begin();
-	it2++;
-	float j = (*it).time;
-	float l = (*it2).time;
-	//std::cout << "\tMax Size : "<<controlPoints.size();
-	for (int k = 1; k < controlPoints.size(); k++)
+	for (int t = 0; t < controlPoints.back().time; t = t + window)
 	{
-		//std::cout << "\tWork2";
-		//std::cout << "\nj :" << j << "  l:" << l;
-
-		for (; j < l; j = j + window)
-		{
-			Util::DrawLib::drawLine(c, useHermiteCurve(k, j));
-			c = useHermiteCurve(k, j);
-
-			//std::cout << "\tWork3";
-
-			//std::cout << "j :"<<j<<"  l:"<<l;
-		}
-		it2++;
-		it++;
-		j = (*it).time;
-		l = (*it2).time;
+		int t1 = t + window;
+		calculatePoint(a, t);
+		calculatePoint(b, t1);
+		DrawLib::drawLine(a, b, curveColor, curveThickness);
 	}
-
-
-	//std::cout << "\n O: " << oldPosition << "\tN: " << newPosition;
-
-	//if ( (int)t % window==0)
-	//Util::DrawLib::drawLine(a, newPosition);
-
-
+	//================DELETE THIS PART AND THEN START CODING===================
+	//static bool flag = false;
+	//if (!flag)
+	//{
+	//	std::cerr << "ERROR>>>>Member function drawCurve is not implemented!" << std::endl;
+	//	flag = true;
+	//}
+	//=========================================================================
 
 	// Robustness: make sure there is at least two control point: start and end points
 
@@ -93,15 +69,34 @@ void Curve::drawCurve(Color curveColor, float curveThickness, int window)
 	return;
 #endif
 }
+
 // Sort controlPoints vector in ascending order: min-first
 void Curve::sortControlPoints()
 {
-	std::sort(controlPoints.begin(), controlPoints.end());
+	//binary search and insert sort maybe better,lambda for c++ 11
+	std::sort(controlPoints.begin(), controlPoints.end(), [](const CurvePoint &left, const CurvePoint &right) {return left.time < right.time; });
+	for (auto it = controlPoints.begin(); it != controlPoints.end();)
+	{
+		if (it != controlPoints.begin())
+		{
+			if (it->time == (it - 1)->time)
+				it = controlPoints.erase(it);
+			else it++;
 
-	//testing sort function
-	//std::cout << "Sorted List:";
-	//for (std::vector<CurvePoint>::iterator it = controlPoints.begin(); it != controlPoints.end();it++)
-	//std::cout << "x: "<<(*it).position.x<<"\n";
+		}
+		else it++;
+	}
+
+
+	//================DELETE THIS PART AND THEN START CODING===================
+	/*static bool flag = false;
+	if (!flag)
+	{
+	std::cerr << "ERROR>>>>Member function sortControlPoints is not implemented!" << std::endl;
+	flag = true;
+	}*/
+	//=========================================================================
+
 	return;
 }
 
@@ -111,10 +106,9 @@ bool Curve::calculatePoint(Point& outputPoint, float time)
 	// Robustness: make sure there is at least two control point: start and end points
 	if (!checkRobust())
 		return false;
+
 	// Define temporary parameters for calculation
 	unsigned int nextPoint;
-	float normalTime, intervalTime;
-
 	// Find the current interval in time, supposing that controlPoints is sorted (sorting is done whenever control points are added)
 	if (!findTimeInterval(nextPoint, time))
 		return false;
@@ -136,15 +130,18 @@ bool Curve::calculatePoint(Point& outputPoint, float time)
 // Check Roboustness
 bool Curve::checkRobust()
 {
-	int p = 0;
-	sortControlPoints();
-	//int p = (*controlPoints.end()).time;
-	for (std::vector<CurvePoint>::iterator it = controlPoints.begin(); it != controlPoints.end(); it++)
-		p++;
-	if (p < 2)
-	{
+	if (controlPoints.size() < 2)
 		return false;
-	}
+
+
+	//================DELETE THIS PART AND THEN START CODING===================
+	/*static bool flag = false;
+	if (!flag)
+	{
+	std::cerr << "ERROR>>>>Member function checkRobust is not implemented!" << std::endl;
+	flag = true;
+	}*/
+	//=========================================================================
 
 
 	return true;
@@ -153,142 +150,122 @@ bool Curve::checkRobust()
 // Find the current time interval (i.e. index of the next control point to follow according to current time)
 bool Curve::findTimeInterval(unsigned int& nextPoint, float time)
 {
-	t = time;
-	a = 0;
-	for (std::vector<CurvePoint>::iterator it = controlPoints.begin();; it++)
-	{
 
-		if ((*it).time > time)
-			break;
-		a++;
-		if (it == controlPoints.end())
+	for (int i = 0; i < controlPoints.size(); i++)
+	{
+		if (controlPoints[i - 1].time < time && controlPoints[i].time > time)
 		{
-			a++;
-			break;
+			nextPoint = i;
+			return true;
 		}
 	}
-	nextPoint = a;
 
-	std::cout << "\nCurrent time:" << time << " Next Point:" << a;
-	return true;
+
+	//================DELETE THIS PART AND THEN START CODING===================
+
+	//=========================================================================
+
+
+	return false;
 }
 
 // Implement Hermite curve
 Point Curve::useHermiteCurve(const unsigned int nextPoint, const float time)
 {
-	oldPosition = newPosition;
+	Point newPosition;
 
-	float normalTime, intervalTime, u;
-	//Hermite Curve Implementation
-	std::vector<CurvePoint>::iterator it2 = controlPoints.begin();
-	std::vector<CurvePoint>::iterator it = controlPoints.begin();
-	int z = 1;
-	for (; z < nextPoint || z == nextPoint; z++)
+	CurvePoint &P1 = controlPoints[nextPoint - 1];
+	CurvePoint &P2 = controlPoints[nextPoint];
+	float s = (time - P1.time) / (P2.time - P1.time);
+	float h1 = 2 * pow(s, 3) - 3 * pow(s, 2) + 1;
+	float h2 = -2 * pow(s, 3) + 3 * pow(s, 2);
+	float h3 = pow(s, 3) - 2 * pow(s, 2) + s;
+	float h4 = pow(s, 3) - pow(s, 2);
+
+	newPosition = h1*P1.position + h2*P2.position + h3*P1.tangent*(P2.time - P1.time) + h4*P2.tangent*(P2.time - P1.time);
+
+
+
+	//================DELETE THIS PART AND THEN START CODING===================
+	/*	static bool flag = false;
+	if (!flag)
 	{
-		if (z < nextPoint)
-			it++;
-		it2++;
-	}
-	//std::cout << "\nTime :" << time;
-	normalTime = float((*it2).time - (*it).time);
-	intervalTime = time - (*it).time;
-	u = intervalTime / normalTime;
-	float ax, ay, az, bx, by, bz, cx, cy, cz, dx, dy, dz;
-	float sx = (*it).tangent.x;
-	float sx2 = (*it2).tangent.x;
-
-	float sy = (*it).tangent.y;
-	float sy2 = (*it2).tangent.y;
-
-	float sz = (*it).tangent.z;
-	float sz2 = (*it2).tangent.z;
-
-	ax = (-1 * 2 * ((*it2).position.x - (*it).position.x) / pow(((*it2).time - (*it).time), 3)) + ((sx + sx2) / pow(((*it2).time - (*it).time), 2));
-	bx = (3 * ((*it2).position.x - (*it).position.x) / pow(((*it2).time - (*it).time), 2)) - ((2 * sx + sx2) / pow(((*it2).time - (*it).time), 1));
-	cx = sx;
-	dx = (*it).position.x;
-	ay = (-1 * 2 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 3)) + ((sy + sy2) / pow(((*it2).time - (*it).time), 2));
-	by = (3 * ((*it2).position.y - (*it).position.y) / pow(((*it2).time - (*it).time), 2)) - ((2 * sy + sy2) / pow(((*it2).time - (*it).time), 1));
-	cy = sy;
-	dy = (*it).position.y;
-	az = (-1 * 2 * ((*it2).position.z - (*it).position.z) / pow(((*it2).time - (*it).time), 3)) + ((sz + sz2) / pow(((*it2).time - (*it).time), 2));
-	bz = (3 * ((*it2).position.z - (*it).position.z) / pow(((*it2).time - (*it).time), 2)) - ((2 * sz + sz2) / pow(((*it2).time - (*it).time), 1));
-	cz = sz;
-	dz = (*it).position.z;
-
-	newPosition.x = ax*pow((time - (*it).time), 3) + bx*pow((time - (*it).time), 2) + cx*(time - (*it).time) + dx;
-	newPosition.y = ay*pow((time - (*it).time), 3) + by*pow((time - (*it).time), 2) + cy*(time - (*it).time) + dy;
-	newPosition.z = az*pow((time - (*it).time), 3) + bz*pow((time - (*it).time), 2) + cz*(time - (*it).time) + dz;
+	std::cerr << "ERROR>>>>Member function useHermiteCurve is not implemented!" << std::endl;
+	flag = true;
+	}*/
+	//=========================================================================
 
 
-	//	if (newPosition.x == (*controlPoints.end()).position.x && newPosition.y == (*controlPoints.end()).position.y && newPosition.z == (*controlPoints.end()).position.z)
-	//	std::cout << "Hello";
+	// Calculate time interval, and normal time required for later curve calculations
 
-	if (a == controlPoints.size())
-		return (*controlPoints.begin()).position;
+	// Calculate position at t = time on Hermite curve
 
+	// Return result
 	return newPosition;
 }
 
 // Implement Catmull-Rom curve
 Point Curve::useCatmullCurve(const unsigned int nextPoint, const float time)
-{/*
+{
 	Point newPosition;
-	std::vector<CurvePoint>::iterator it0 = controlPoints.begin();
-	std::vector<CurvePoint>::iterator it = controlPoints.begin();
-	std::vector<CurvePoint>::iterator it2 = controlPoints.begin();
-	std::vector<CurvePoint>::iterator it3 = controlPoints.begin();
-	int z = 1;
-	float u, normalTime, intervalTime, h1, h2, h3, h4;
-	for (; z < nextPoint; z++)
+
+	CurvePoint &P1 = controlPoints[nextPoint - 1];
+	CurvePoint &P2 = controlPoints[nextPoint];
+
+	float s = (time - P1.time) / (P2.time - P1.time);
+	float h1 = 2 * pow(s, 3) - 3 * pow(s, 2) + 1;
+	float h2 = -2 * pow(s, 3) + 3 * pow(s, 2);
+	float h3 = pow(s, 3) - 2 * pow(s, 2) + s;
+	float h4 = pow(s, 3) - pow(s, 2);
+	Vector T1, T2;
+
+	if (controlPoints.size() == 2)
 	{
-		it++;
+		T1 = (P2.position - P1.position) / (P2.time - P1.time);
+		T2 = T1;
 	}
-	it0 = it; it0--;
-	it2 = it; it2++;
-	it3 = it2; it3++;
-	//std::cout << "\ntime:" << time << "\tnextpoint :" << nextPoint << "\tz:" << z << " \tit :" << (*it).time << " \tit2 :" << (*it2).time << " \tit3 :" << (*it3).time << " \tit0 :" << (*it0).time;
-
-	normalTime = (*it2).time - (*it).time;
-	if (it2 == controlPoints.end())
+	else if (nextPoint == 1)
 	{
-
-		(*it3).position.x *= 0;
-		(*it3).position.y *= 0;
-		(*it3).position.z *= 0;
-
+		CurvePoint &P3 = controlPoints[nextPoint + 1];
+		T1 = (P2.position - P1.position) / (P2.time - P1.time)*(P3.time - P1.time) / (P3.time - P2.time) - (P3.position - P1.position) / (P3.time - P1.time)*(P2.time - P1.time) / (P3.time - P2.time);
+		T2 = (P3.position - P2.position) / (P3.time - P2.time)*(P2.time - P1.time) / (P3.time - P1.time) + (P2.position - P1.position) / (P2.time - P1.time)*(P3.time - P2.time) / (P3.time - P1.time);
 	}
 
-	if (it == controlPoints.begin())
+	else if (nextPoint == controlPoints.size() - 1)
 	{
-		(*it).tangent.x = (0.5*((*it2).position.x - 0));
-		(*it).tangent.y = (0.5*((*it2).position.y - 0));
-		(*it).tangent.z = (0.5*((*it2).position.z - 0));
+
+		CurvePoint &P0 = controlPoints[nextPoint - 2];
+		T1 = (P2.position - P1.position) / (P2.time - P1.time)*(P1.time - P0.time) / (P2.time - P0.time) + (P1.position - P0.position) / (P1.time - P0.time)*(P2.time - P1.time) / (P2.time - P0.time);
+		T2 = (P2.position - P1.position) / (P2.time - P1.time)*(P2.time - P0.time) / (P1.time - P0.time) - (P2.position - P0.position) / (P2.time - P0.time)*(P1.time - P0.time) / (P1.time - P0.time);
+	}
+	else {
+		CurvePoint &P0 = controlPoints[nextPoint - 2];
+		CurvePoint &P3 = controlPoints[nextPoint + 1];
+		T1 = (P2.position - P1.position) / (P2.time - P1.time)*(P1.time - P0.time) / (P2.time - P0.time) + (P1.position - P0.position) / (P1.time - P0.time)*(P2.time - P1.time) / (P2.time - P0.time);
+		T2 = (P3.position - P2.position) / (P3.time - P2.time)*(P2.time - P1.time) / (P3.time - P1.time) + (P2.position - P1.position) / (P2.time - P1.time)*(P3.time - P2.time) / (P3.time - P1.time);
 	}
 
-	else if (it == controlPoints.end())
-	{
-		(*it).tangent.x = (0.5*(0 - (*it0).position.x));
-		(*it).tangent.y = (0.5*(0 - (*it0).position.y));
-		(*it).tangent.z = (0.5*(0 - (*it0).position.z));
-	}
-	else
-	{
-		(*it).tangent.x = (0.5*((*it2).position.x - (*it0).position.x));
-		(*it).tangent.y = (0.5*((*it2).position.y - (*it0).position.y));
-		(*it).tangent.z = (0.5*((*it2).position.z - (*it0).position.z));
-	}
-	intervalTime = time - (*it).time;
-	u = intervalTime / normalTime;
+	newPosition = h1*P1.position + h2*P2.position + h3*T1*(P2.time - P1.time) + h4*T2*(P2.time - P1.time);
 
-	h1 = (-0.5 * pow(u, 3)) + (pow(u, 2)) - (0.5 * u);
-	h2 = (1.5* pow(u, 3)) + (-2.5 * pow(u, 2)) + 1;
-	h3 = (-1.5*pow(u, 3)) + (2 * pow(u, 2)) + (0.5 * u);
-	h4 = (pow(u, 3)* 0.5) - (0.5*pow(u, 2));
 
-	newPosition.x = ((*it0).position.x * h1) + ((*it).position.x * h2) + ((*it2).position.x * h3) + ((*it3).position.x * h4);
-	newPosition.y = ((*it0).position.y * h1) + ((*it).position.y * h2) + ((*it2).position.y * h3) + ((*it3).position.y * h4);
-	newPosition.z = ((*it0).position.z * h1) + ((*it).position.z * h2) + ((*it2).position.z * h3) + ((*it3).position.z * h4);
-	*/
+
+
+
+
+	//================DELETE THIS PART AND THEN START CODING===================
+	/*	static bool flag = false;
+	if (!flag)
+	{
+	std::cerr << "ERROR>>>>Member function useCatmullCurve is not implemented!" << std::endl;
+	flag = true;
+	}*/
+	//=========================================================================
+
+
+	// Calculate time interval, and normal time required for later curve calculations
+
+	// Calculate position at t = time on Catmull-Rom curve
+
+	// Return result
 	return newPosition;
 }
