@@ -1,29 +1,17 @@
-﻿Build started 10/28/2015 1:25:28 AM.
-     1>Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\pprAI\build\win32\pprAI.vcxproj" on node 3 (Build target(s)).
+﻿Build started 12/11/2015 3:40:15 PM.
+     1>Project "C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\pprAI\build\win32\pprAI.vcxproj" on node 3 (Build target(s)).
      1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\\" util.lib steerlib.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.lib" /MACHINE:X64 /DLL Release\PPRAgent.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\\" util.lib steerlib.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.lib" /MACHINE:X64 /DLL Release\PPRAgent.obj
          Release\PPRAIModule.obj
-            Creating library C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.lib and object C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.exp
+            Creating library C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.lib and object C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.exp
          Generating code
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\include\ppragent.h(64): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(755): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(756): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(951): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(952): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(165): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(166): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(755): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(756): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(589): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(1376): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(1376): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(1464): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(1509): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\pprai\src\ppragent.cpp(1509): warning C4756: overflow in constant arithmetic
+         0 of 1468 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
-         pprAI.vcxproj -> C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\pprAI.dll
-     1>Done Building Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\pprAI\build\win32\pprAI.vcxproj" (Build target(s)).
+         pprAI.vcxproj -> C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\pprAI.dll
+     1>Done Building Project "C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\pprAI\build\win32\pprAI.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:09.35
+Time Elapsed 00:00:01.26

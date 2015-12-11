@@ -1,9 +1,3 @@
-//
-// Copyright (c) 2015 Mahyar Khayatkhoei
-// Copyright (c) 2009-2014 Shawn Singh, Glen Berseth, Mubbasir Kapadia, Petros Faloutsos, Glenn Reinman
-// See license.txt for complete license.
-//
-
 #include <algorithm>
 #include <vector>
 #include <util/Geometry.h>

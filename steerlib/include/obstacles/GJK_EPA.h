@@ -1,3 +1,8 @@
+/*!
+*
+* \author VaHiD AzIzI
+*
+*/
 
 
 #ifndef GJK_EPA_H_

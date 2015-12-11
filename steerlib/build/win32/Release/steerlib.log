@@ -1,15 +1,18 @@
-﻿Build started 10/28/2015 1:24:52 AM.
-     1>Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerlib\build\win32\steerlib.vcxproj" on node 2 (Build target(s)).
+﻿Build started 12/11/2015 3:40:06 PM.
+     1>Project "C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\steerlib\build\win32\steerlib.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\util\include /I..\..\include /I..\..\..\external /Zi /nologo /W3 /WX- /MP /O2 /Oi /Ot /GL /D _COMPILING_WIN32_STEERLIB /D ENABLE_GUI /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\src\GJK_EPA.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\util\include /I..\..\include /I..\..\..\external /Zi /nologo /W3 /WX- /MP /O2 /Oi /Ot /GL /D _COMPILING_WIN32_STEERLIB /D ENABLE_GUI /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /errorReport:prompt ..\..\src\AStarPlanner.cpp
      1>cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
-         GJK_EPA.cpp
-     1>..\..\src\GJK_EPA.cpp(20): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>..\..\src\GJK_EPA.cpp(23): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>..\..\src\GJK_EPA.cpp(131): warning C4101: 'd2' : unreferenced local variable
-     1>..\..\src\GJK_EPA.cpp(131): warning C4101: 'd1' : unreferenced local variable
+         AStarPlanner.cpp
+     1>c:\users\ne0\desktop\a5_attempt2\steerlite-master\steerlib\include\util/GenericException.h(57): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'Util::GenericException'
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: see declaration of 'std::exception'
+         c:\users\ne0\desktop\a5_attempt2\steerlite-master\steerlib\include\util/GenericException.h(56): note: see declaration of 'Util::GenericException'
+     1>c:\users\ne0\desktop\a5_attempt2\steerlite-master\util\include\LogObject.h(85): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>..\..\src\AStarPlanner.cpp(114): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+     1>..\..\src\AStarPlanner.cpp(143): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\\" util.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.pdb" /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.lib" /MACHINE:X64 /DLL Release\AgentMetricsCollector.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\\" util.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.pdb" /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.lib" /MACHINE:X64 /DLL Release\AgentMetricsCollector.obj
+         Release\AStarPlanner.obj
          Release\BehaviorParameter.obj
          Release\Behaviour.obj
          Release\BenchmarkEngine.obj
@@ -54,16 +57,15 @@
          Release\tinyxml.obj
          Release\tinyxmlerror.obj
          Release\tinyxmlparser.obj
-            Creating library C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.lib and object C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.exp
+            Creating library C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.lib and object C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.exp
          Generating code
-     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(75): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(83): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(91): warning C4756: overflow in constant arithmetic
-     1>c:\users\krishna ananth\documents\github\steerlite\steerlib\src\agentmetricscollector.cpp(100): warning C4756: overflow in constant arithmetic
+         2 of 9222 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           1 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
-         steerlib.vcxproj -> C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\build\win32\Release\steerlib.dll
-     1>Done Building Project "C:\Users\Krishna Ananth\Documents\GitHub\SteerLite\steerlib\build\win32\steerlib.vcxproj" (Build target(s)).
+         steerlib.vcxproj -> C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\build\win32\Release\steerlib.dll
+     1>Done Building Project "C:\Users\Ne0\Desktop\A5_Attempt2\SteerLite-master\steerlib\build\win32\steerlib.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:28.32
+Time Elapsed 00:00:07.31

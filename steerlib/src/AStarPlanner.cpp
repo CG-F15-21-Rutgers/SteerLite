@@ -14,47 +14,47 @@
 #include <queue>
 #include <math.h>
 #include "planning/AStarPlanner.h"
-#include<limits.h>
-#include<cmath>
+#include <limits.h>
+#include <cmath>
 
 #define COLLISION_COST  1000
 #define GRID_STEP  1
 #define OBSTACLE_CLEARANCE 1
 #define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
 #define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
-#define MANHATTAN 0                // 1 for Manhattan distance, 0 for Eucledian
+#define MANHATTAN 1                // 1 for Manhattan distance, 0 for Eucledian
 namespace SteerLib
 {
-	AStarPlanner::AStarPlanner(){}
+	AStarPlanner::AStarPlanner() {}
 
-	AStarPlanner::~AStarPlanner(){}
+	AStarPlanner::~AStarPlanner() {}
 
-	bool AStarPlanner::canBeTraversed ( int id ) 
+	bool AStarPlanner::canBeTraversed(int id)
 	{
 		double traversal_cost = 0;
 		int current_id = id;
-		unsigned int x,z;
+		unsigned int x, z;
 		gSpatialDatabase->getGridCoordinatesFromIndex(current_id, x, z);
 		int x_range_min, x_range_max, z_range_min, z_range_max;
 
-		x_range_min = MAX(x-OBSTACLE_CLEARANCE, 0);
-		x_range_max = MIN(x+OBSTACLE_CLEARANCE, gSpatialDatabase->getNumCellsX());
+		x_range_min = MAX(x - OBSTACLE_CLEARANCE, 0);
+		x_range_max = MIN(x + OBSTACLE_CLEARANCE, gSpatialDatabase->getNumCellsX());
 
-		z_range_min = MAX(z-OBSTACLE_CLEARANCE, 0);
-		z_range_max = MIN(z+OBSTACLE_CLEARANCE, gSpatialDatabase->getNumCellsZ());
+		z_range_min = MAX(z - OBSTACLE_CLEARANCE, 0);
+		z_range_max = MIN(z + OBSTACLE_CLEARANCE, gSpatialDatabase->getNumCellsZ());
 
 
-		for (int i = x_range_min; i<=x_range_max; i+=GRID_STEP)
+		for (int i = x_range_min; i <= x_range_max; i += GRID_STEP)
 		{
-			for (int j = z_range_min; j<=z_range_max; j+=GRID_STEP)
+			for (int j = z_range_min; j <= z_range_max; j += GRID_STEP)
 			{
-				int index = gSpatialDatabase->getCellIndexFromGridCoords( i, j );
-				traversal_cost += gSpatialDatabase->getTraversalCost ( index );
-				
+				int index = gSpatialDatabase->getCellIndexFromGridCoords(i, j);
+				traversal_cost += gSpatialDatabase->getTraversalCost(index);
+
 			}
 		}
 
-		if ( traversal_cost > COLLISION_COST ) 
+		if (traversal_cost > COLLISION_COST)
 			return false;
 		return true;
 	}
@@ -76,17 +76,17 @@ namespace SteerLib
 		}
 		else
 		{
-			cost = sqrt(pow((Astart.point.x-Agoal.point.x),2)+pow((Astart.point.z-Agoal.point.z),2));
+			cost = sqrt(pow((Astart.point.x - Agoal.point.x), 2) + pow((Astart.point.z - Agoal.point.z), 2));
 		}
 		return cost;
 	}
-	
+
 	AStarPlannerNode lowestFScore(std::vector<AStarPlannerNode> &open, int &index)
 	{
 		std::vector<AStarPlannerNode>::iterator itr = open.begin();
 		index = INT_MAX;
 		AStarPlannerNode temp;
-		for (int i=0; itr != open.end();itr++,i++)
+		for (int i = 0; itr != open.end(); itr++, i++)
 		{
 			if (temp > *itr) {
 				index = i;
@@ -102,17 +102,17 @@ namespace SteerLib
 			}
 
 		}
-		
+
 		return temp;
 	}
-	std::vector<AStarPlannerNode> AStarPlanner::getNeighbours(AStarPlannerNode current, AStarPlannerNode goal )
-	{
+	std::vector<AStarPlannerNode> AStarPlanner::getNeighbours(AStarPlannerNode current, AStarPlannerNode goal)
+	{    
 		int currentIndex = gSpatialDatabase->getCellIndexFromLocation(current.point);
 		std::vector<AStarPlannerNode> neighbours;
-		unsigned int currentPointx,currentPointz; 
+		unsigned int currentPointx, currentPointz;
 		gSpatialDatabase->getGridCoordinatesFromIndex(currentIndex, currentPointx, currentPointz);
 		Util::Point currentPoint(currentPointx, 0, currentPointz);
-		Util::Point temp(0,0,0);
+		Util::Point temp(0, 0, 0);
 		for (int i = 0; i < 8; i++)
 		{
 			temp = currentPoint;
@@ -141,23 +141,25 @@ namespace SteerLib
 				temp.x--; temp.z++;
 			}
 			int index = gSpatialDatabase->getCellIndexFromGridCoords(temp.x, temp.z);
+			temp = getPointFromGridIndex(index);
 			if (canBeTraversed(index))
 			{
-				temp = getPointFromGridIndex(index);
+				//std::cout << "\t\t Going in";
+				
 				AStarPlannerNode x;
 				x.point = temp;
-	//			if(i<4)
+				//			if(i<4)
 				x.g = current.g + 1;
-		//		else
-			//	x.g = current.g + sqrt(2);
-				x.f = x.g + (8*heuristic_cost_estimate(x, goal));
+				//		else
+				//	x.g = current.g + sqrt(2);
+				x.f = x.g + (8 * heuristic_cost_estimate(x, goal));
 				x.parentx = current.point.x;
 				x.parentz = current.point.z;
 				neighbours.push_back(x);
 			}
-		
+
 		}
-	
+
 		return neighbours;
 	}
 	bool inClosedList(AStarPlannerNode check, std::vector<AStarPlannerNode> closed)
@@ -172,7 +174,7 @@ namespace SteerLib
 	int inOpenList(AStarPlannerNode check, std::vector<AStarPlannerNode> closed)
 	{
 		int i = 0;
-		for (std::vector<AStarPlannerNode>::iterator itr = closed.begin(); itr != closed.end(); itr++,i++)
+		for (std::vector<AStarPlannerNode>::iterator itr = closed.begin(); itr != closed.end(); itr++, i++)
 		{
 			if (check == (*itr))
 				return i;
@@ -190,20 +192,20 @@ namespace SteerLib
 	}
 
 
-	bool AStarPlanner::computePath(std::vector<Util::Point>& agent_path,  Util::Point start, Util::Point goal, SteerLib::GridDatabase2D * _gSpatialDatabase, bool append_to_path)
+	bool AStarPlanner::computePath(std::vector<Util::Point>& agent_path, Util::Point start, Util::Point goal, SteerLib::GridDatabase2D * _gSpatialDatabase, bool append_to_path)
 	{
 		gSpatialDatabase = _gSpatialDatabase;
-       		
-        int startIndex =_gSpatialDatabase->getCellIndexFromLocation(start);
+
+		int startIndex = _gSpatialDatabase->getCellIndexFromLocation(start);
 		start = getPointFromGridIndex(startIndex);
 		AStarPlannerNode Astart(start, 0, 0, NULL);
 		int goalIndex = _gSpatialDatabase->getCellIndexFromLocation(goal);
 		goal = getPointFromGridIndex(goalIndex);
-		AStarPlannerNode Agoal(goal,DBL_MAX,DBL_MAX,NULL);
+		AStarPlannerNode Agoal(goal, DBL_MAX, DBL_MAX, NULL);
 		std::vector<AStarPlannerNode> open;
 		std::vector<AStarPlannerNode> closed;
 		Astart.g = 0;
-		Astart.f = Astart.g + heuristic_cost_estimate(Astart,Agoal);
+		Astart.f = Astart.g + heuristic_cost_estimate(Astart, Agoal);
 		open.emplace_back(Astart);
 		int index;
 		std::vector<AStarPlannerNode> neighbours;
@@ -211,49 +213,49 @@ namespace SteerLib
 		while (!open.empty())
 		{
 			neighbours.clear();
-		current = lowestFScore(open,index);
-		if (current.point == Agoal.point)
-		{   			
-			std::cout << "\nPath length:" << current.g;
-
-			while (!(current.parentx == 0 && current.parentz==0))
+			current = lowestFScore(open, index);
+			if (current.point == Agoal.point)
 			{
-				agent_path.push_back(current.point);
-				current = findclosed(closed, current);
+				//std::cout << "\nPath length:" << current.g;
+
+				while (!(current.parentx == 0 && current.parentz == 0))
+				{
+					agent_path.push_back(current.point);
+					current = findclosed(closed, current);
+				}
+				std::reverse(agent_path.begin(), agent_path.end());
+				//std::cout << "\n\tNumber of nodes in Closed List: " << closed.size();
+				return TRUE;
 			}
-			std::reverse(agent_path.begin(),agent_path.end());
-			std::cout << "\n\tNumber of nodes in Closed List: " << closed.size();
-			return TRUE;
-		}
-		open.erase(open.begin()+index);
-		
-		closed.push_back(current);
+			open.erase(open.begin() + index);
 
-		neighbours = getNeighbours(current,Agoal);
-		double tentative_gscore=0;
-		int i; int z = 0;
-		for (std::vector<AStarPlannerNode>::iterator itr = neighbours.begin(); itr != neighbours.end(); itr++,z++)
-		{
-			if (inClosedList(*itr, closed))
-				continue;
-			tentative_gscore = current.g + 1;
-			i = inOpenList(*itr, open);
-			if (i != -1)
+			closed.push_back(current);
+
+			neighbours = getNeighbours(current, Agoal);
+			double tentative_gscore = 0;
+			int i; int z = 0;
+			for (std::vector<AStarPlannerNode>::iterator itr = neighbours.begin(); itr != neighbours.end(); itr++, z++)
 			{
-				if (tentative_gscore < open.at(i).g)
-				{   
-					open.at(i).g = tentative_gscore;
-					open.at(i).parentx = current.point.x;
-					open.at(i).parentz = current.point.z;
-					open.at(i).f = open.at(i).g + heuristic_cost_estimate(open.at(i),Agoal);
+				if (inClosedList(*itr, closed))
+					continue;
+				tentative_gscore = current.g + 1;
+				i = inOpenList(*itr, open);
+				if (i != -1)
+				{
+					if (tentative_gscore < open.at(i).g)
+					{
+						open.at(i).g = tentative_gscore;
+						open.at(i).parentx = current.point.x;
+						open.at(i).parentz = current.point.z;
+						open.at(i).f = open.at(i).g + heuristic_cost_estimate(open.at(i), Agoal);
+					}
+				}
+				else
+				{
+					open.push_back(neighbours.at(z));
 				}
 			}
-			else
-			{
-				open.push_back(neighbours.at(z));
-			}
-		}
-		
+
 		}
 		std::cout << "\n No path";
 		return false;

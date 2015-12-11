@@ -1,9 +1,3 @@
-//
-// Copyright (c) 2015 Mahyar Khayatkhoei
-// Copyright (c) 2009-2014 Shawn Singh, Glen Berseth, Mubbasir Kapadia, Petros Faloutsos, Glenn Reinman
-// See license.txt for complete license.
-//
-
 #ifndef __UTIL_CURVE_H__
 #define __UTIL_CURVE_H__
 
@@ -36,7 +30,7 @@ namespace Util {
 	{
 	public:
 		CurvePoint(Point inputPosition, Vector& inputTangent, float inputTime) : position(inputPosition),
-																tangent(inputTangent), time(inputTime) {}
+			tangent(inputTangent), time(inputTime) {}
 		Point position;
 		Vector tangent;
 		float time;
